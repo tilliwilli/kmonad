@@ -8,7 +8,7 @@
   n_met   (tap-hold-next-release 200 n (around rmet (layer-toggle right_homerow_mod)))
   e_sft   (tap-hold-next-release 200 e (around rsft (layer-toggle right_homerow_mod)))
   i_opt   (tap-hold-next-release 200 i (around lalt (layer-toggle right_homerow_mod)))
-  o_ctl   (tap-hold-next-release 200 o (around rctl (layer-toggle right_homerow_mod)))
+  u_ctl   (tap-hold-next-release 200 u (around rctl (layer-toggle right_homerow_mod)))
 
   ;; hyper key on CAPS-hold
   caps    (tap-hold-next-release 200 caps (around lctl (around lalt (around lmet lsft))))
@@ -109,7 +109,7 @@
   _       _       _       _       _       _       _       _       _       _       _       _       _
   _       _       _       _       _       _       _       _       _       _       _       _       _       _
   _          _       _       _       _       _       _       _       _       _       _       _       _       _
-  _             _       _       _       _       _       _       n       e       i       o       _       _
+  _             _       _       _       _       _       _       n       e       i       u       _       _
   _         _       _       _       _       _       _       _       _       _       _       _       _       _
   _       _       _       _               _                              _       _       _       _       _       _
 )
