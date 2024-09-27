@@ -116,7 +116,7 @@
 )
 
 (deflayer function
-  _       brdn    brup    mctl    spot    dict    zzz     prev    pp      next    mute    vold    volu
+  _       brdn    brup    mctl    spot    dict    _       prev    pp      next    mute    vold    volu
   _       _       _       _       _       _       _       _       _       _       _       _       _       del
   _          _       _       _       _       _       _       _       _       _       _       _       _       _
   _             _       _       _       _       _       _       _       _       _       _       _       _
@@ -125,7 +125,7 @@
 )
 
 (deflayer function_gaming
-  _       brdn    brup    mctl    spot    dict    zzz     prev    pp      next    mute    vold    volu
+  _       brdn    brup    mctl    spot    dict    _       prev    pp      next    mute    vold    volu
   _       _       _       _       _       _       _       _       _       _       _       _       _       del
   _          _       _       _       _       _       _       _       _       _       _       _       _       _
   _             _       _       _       _       _       _       _       _       _       _       _       _
