@@ -1,0 +1,134 @@
+(defalias
+  ;; all special characters put into macros to easily align them with the custom system keyboard layout
+  /       /
+  ?       S-/
+  !       S-1
+  at      S-2
+  #       S-3
+  $       S-4
+  %       S-5
+  ^       S-6
+  &       S-7
+  *       S-8
+  lpar    S-9
+  rpar    S-0
+  [       [
+  ]       ]
+  {       S-[
+  }       S-]
+  <       S-,
+  >       S-.
+  -       -
+  undscr  S--
+  =       =
+  +       S-=
+  bslsh   \
+  |       S-\
+  quot    S-'
+  '       '
+  `       grv
+  ~       S-grv
+
+  ;; home-row mods
+  a_ctl   (tap-hold-next-release 200 a (around lctl (layer-toggle left_homerow_mod)))
+  s_opt   (tap-hold-next-release 200 s (around lalt (layer-toggle left_homerow_mod)))
+  d_sft   (tap-hold-next-release 200 d (around lsft (layer-toggle left_homerow_mod)))
+  f_met   (tap-hold-next-release 200 f (around lmet (layer-toggle left_homerow_mod)))
+
+  j_met   (tap-hold-next-release 200 j (around rmet (layer-toggle right_homerow_mod)))
+  k_sft   (tap-hold-next-release 200 k (around rsft (layer-toggle right_homerow_mod)))
+  l_opt   (tap-hold-next-release 200 l (around lalt (layer-toggle right_homerow_mod)))
+  ;_ctl   (tap-hold-next-release 200 ; (around rctl (layer-toggle right_homerow_mod)))
+
+  ;; caps is backspace w/ hyper key on hold
+  caps    (tap-hold-next-release 200 bspc (around lctl (around lalt (around lmet lsft))))
+  ;; my custom MEH on tab-hold
+  tab     (tap-hold-next-release 200 tab (around lctl (around lalt lmet)))
+
+  ;; my custom layers
+  spc     (tap-hold-next-release 200 spc (layer-toggle charlayer))
+  ;h_char  (tap-hold-next-release 200 h (layer-toggle charlayer))
+  lmet    (tap-hold-next-release 200 esc (layer-toggle navlayer))
+  lalt    (tap-hold-next-release 200 lalt (layer-toggle numlayer))
+
+  ;; modifier keys with different tap behaviour
+  rmet    (tap-hold-next-release 200 ret rmet)
+  lsft    (tap-hold-next-release 200 @lpar lsft)
+  rsft    (tap-hold-next-release 200 @rpar rsft)
+
+  ;; special direct-cmd-homerow mods for the "cmd" layer
+  a_ctl2  (tap-hold-next-release 200 M-a lctl)
+  s_opt2  (tap-hold-next-release 200 M-s lalt)
+  d_sft2  (tap-hold-next-release 200 M-d lsft)
+  f_met2  (tap-hold-next-release 200 M-f lmet)
+  gf      (tap-hold 200 M-g M-f)
+  gf_sft  (tap-hold 200 M-S-g M-S-f)
+
+  ;; function key / gaming layers
+  fn      (around Fn (layer-toggle function))
+  fngame  (around Fn (layer-toggle function_gaming))
+  gaming  (layer-switch gaming)
+  reset   (layer-switch default)
+)
+
+(deflayer navlayer
+  M-esc   M-f1    M-f2    M-f3    M-f4    M-f5    M-f6    M-f7    M-f8    M-f9    M-f10   M-f11   M-f12
+  M-grv   M-1     M-2     M-3     M-4     M-5     M-6     M-7     pgup    M-9     M-0     M--     M-=     M-bspc
+  M-tab      M-q     M-w     C-S-tab C-tab   M-t     XX      bspc    up      del     XX      M-[     M-]     M-\
+  _             @a_ctl2 @s_opt2 @d_sft2 @f_met2 M-g     pgup    left    down    right   tab     XX      M-ret
+  _         M-'     M-z     M-x     M-c     M-v     M-b     pgdn    home    pgdn    end     M-/     _       M-up
+  _       _       _       _                      M-spc                   XX      XX      XX      M-left  M-down  M-right
+)
+
+(deflayer numlayer
+  _       XX      XX      XX      XX      XX      XX      XX      XX      XX      XX      XX      XX
+  XX      XX      XX      XX      XX      XX      XX      7       8       9       XX      XX      XX      _
+  _          XX      XX      XX      XX      XX      XX      4       5       6       kp*     XX       XX      _
+  _             lctl    lalt    lsft    lmet    XX      kp-     1       2       3       kp+     XX      _
+  _         XX      XX      XX      XX      XX      XX      XX      0       ,       .       kp/      _       XX
+  XX      XX      XX      XX                     _                       _       XX      XX      XX      XX      XX
+)
+
+(deflayer charlayer
+  _       XX      XX      XX      XX      XX      XX      XX      XX      XX      XX      XX     XX
+  XX      _       _       _       _       _       _       _       _       _       _       XX      XX      _
+  _          @`      @at     @<      @>      @%      @|      @&      @quot   '       XX      XX      XX      _
+  _             @^      @$      @{      @}      @`       @!      @undscr @-      @=      @+      XX      _
+  _         @bslsh  @#      @[      @]      @~      XX      @?      @*      ,       .       @/      _       XX
+  XX      XX      XX      XX                     _                       _       XX      XX      XX      XX      XX
+)
+
+(deflayer left_homerow_mod
+  _       _       _       _       _       _       _       _       _       _       _       _       _
+  _       _       _       _       _       _       _       _       _       _       _       _       _       _
+  _          _       _       _       _       _       _       _       _       _       _       _       _       _
+  _             _       _       _       _       _       _       j       k       l       ;       _       _
+  _         _       _       _       _       _       _       _       _       _       _       _       _       _
+  _       _       _       _                      _                       _       _       _       _       _       _
+)
+(deflayer right_homerow_mod
+  _       _       _       _       _       _       _       _       _       _       _       _       _
+  _       _       _       _       _       _       _       _       _       _       _       _       _       _
+  _          _       _       _       _       _       _       _       _       _       _       _       _       _
+  _             a       s       d       f       _       _       _       _       _       _       _       _
+  _         _       _       _       _       _       _       _       _       _       _       _       _       _
+  _       _       _       _                      _                       _       _       _       _       _       _
+)
+
+(deflayer function
+  _       brdn    brup    mctl    spot    dict    zzz     prev    pp      next    mute    vold    volu
+  _       _       _       _       _       _       _       _       _       _       _       _       _       del
+  _          _       _       _       _       _       _       _       _       _       _       _       _       _
+  _             _       _       _       _       _       _       _       _       _       _       _       _
+  _         _       _       _       _       _       _       _       _       _       _       _       _       pgup
+  _       _       _       _                      @gaming                 _       _       _       home    pgdn    end
+)
+
+(deflayer function_gaming
+  _       brdn    brup    mctl    spot    dict    zzz     prev    pp      next    mute    vold    volu
+  _       _       _       _       _       _       _       _       _       _       _       _       _       del
+  _          _       _       _       _       _       _       _       _       _       _       _       _       _
+  _             _       _       _       _       _       _       _       _       _       _       _       _
+  _         _       _       _       _       _       _       _       _       _       _       _       _       pgup
+  _       _       _       _                      @reset                  _       _       _       home    pgdn    end
+)
