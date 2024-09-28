@@ -47,7 +47,6 @@
 
   ;; my custom layers
   spc     (tap-hold-next-release 200 spc (layer-toggle charlayer))
-  ;h_char  (tap-hold-next-release 200 h (layer-toggle charlayer))
   lmet    (tap-hold-next-release 200 esc (layer-toggle navlayer))
   lalt    (tap-hold-next-release 200 lalt (layer-toggle numlayer))
 
@@ -82,11 +81,11 @@
 
 (deflayer numlayer
   _       XX      XX      XX      XX      XX      XX      XX      XX      XX      XX      XX      XX
-  XX      XX      XX      XX      XX      XX      XX      7       8       9       XX      XX      XX      _
-  _          XX      XX      XX      XX      XX      XX      4       5       6       kp*     XX       XX      _
-  _             lctl    lalt    lsft    lmet    XX      kp-     1       2       3       kp+     XX      _
-  _         XX      XX      XX      XX      XX      XX      XX      0       ,       .       kp/      _       XX
-  XX      XX      XX      XX                     _                       _       XX      XX      XX      XX      XX
+  XX      XX      XX      XX      XX      XX      XX      XX      XX      XX      XX      XX      XX      _
+  _          XX      XX      XX      XX      XX      XX      7       8       9       XX      XX       XX      _
+  _             lctl    lalt    lsft    lmet    XX      kp-     4       5       6       kp+     XX      _
+  _         XX      XX      XX      XX      XX      XX      kp/     1       2       3       kp/      _       XX
+  XX      XX      XX      XX                     0                       ,       .       XX      XX      XX      XX
 )
 
 (deflayer charlayer
